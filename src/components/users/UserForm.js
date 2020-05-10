@@ -101,7 +101,7 @@ const UserForm = (props) => {
         </div>
         <div className="col-12 col-sm-6">
           <div className="form-group">
-            <label htmlFor="lastName">Last name</label>
+            <label htmlFor="lastName">Last name 1</label>
             <input
               type="text"
               className={`form-control ${
