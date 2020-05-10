@@ -78,7 +78,7 @@ const UserForm = (props) => {
       <div className="row">
         <div className="col-12 col-sm-6">
           <div className="form-group">
-            <label htmlFor="firstName">First name 1</label>
+            <label htmlFor="firstName">First name</label>
             <input
               type="text"
               className={`form-control ${
@@ -101,7 +101,7 @@ const UserForm = (props) => {
         </div>
         <div className="col-12 col-sm-6">
           <div className="form-group">
-            <label htmlFor="lastName">Last name 1</label>
+            <label htmlFor="lastName">Last name</label>
             <input
               type="text"
               className={`form-control ${
