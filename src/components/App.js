@@ -5,6 +5,7 @@ import Header from './Header';
 import UserList from './users/UserList';
 import UserCreate from './users/UserCreate';
 import UserEdit from './users/UserEdit';
+import SignupForm from './users/SignupForm';
 import { ToastContainer } from 'react-toastify';
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/" exact component={UserList}></Route>
           <Route path="/users/create" exact component={UserCreate}></Route>
           <Route path="/users/edit/:id" exact component={UserEdit}></Route>
+          <Route path="/users/sign-up" exact component={SignupForm}></Route>
         </div>
       </Router>
       <ToastContainer
