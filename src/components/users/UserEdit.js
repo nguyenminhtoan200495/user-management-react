@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import UserForm from './UserForm';
 import { fetchUser, editUser } from '../../actions';
@@ -7,7 +7,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import { toast } from 'react-toastify';
 import './user.scss';
 
-const EditCreate = (props) => {
+const UserEdit = (props) => {
   useEffect(() => {
     props.fetchUser(props.match.params.id);
   }, []);
@@ -47,4 +47,4 @@ const mapStateToProps = (state) => {
   return { user: state.user.user };
 };
 
-export default connect(mapStateToProps, { fetchUser, editUser })(EditCreate);
+export default connect(mapStateToProps, { fetchUser, editUser })(UserEdit);
