@@ -1,4 +1,4 @@
-import { CREATE_USER } from '../actions/types';
+import { FETCH_USER } from './types';
 
 const INITIAL_STATE = {
   user: {}
@@ -6,7 +6,7 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case CREATE_USER:
+    case FETCH_USER:
       return { ...state, user: action.payload };
     default:
       return state;

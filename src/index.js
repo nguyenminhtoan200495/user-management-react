@@ -6,7 +6,7 @@ import reduxThunk from 'redux-thunk';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.min.css';
 
-import App from './components/App';
+import App from './App';
 import reducers from './reducers';
 
 const store = createStore(reducers, applyMiddleware(reduxThunk));

@@ -1,26 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { fetchUsers, deleteUser } from '../../actions';
-import ConfirmModal from '../ConfirmModal';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchUsers, deleteUser } from './actions';
+import ConfirmModal from '../../components/ConfirmModal';
 
-const UserList = ({ users, fetchUsers }) => {
+const Users = () => {
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.userList);
   const [currentId, setCurrentId] = useState(undefined);
   const [show, setShow] = useState(false);
   const modalTitle = 'Delete modal';
   const modalBody = 'Do you want to delete this user?';
+
   useEffect(() => {
-    fetchUsers();
-  }, []);
+    dispatch(fetchUsers());
+  }, [dispatch]);
 
   const onDelete = (id) => {
     setShow(true);
     setCurrentId(id);
   };
 
-  const doDelete = async (currentId) => {
-    console.log('currentId: ', currentId);
+  const doDelete = async () => {
     await deleteUser(currentId);
+    setShow(false);
   };
 
   return (
@@ -35,7 +38,7 @@ const UserList = ({ users, fetchUsers }) => {
       <ConfirmModal
         show={show}
         doShow={setShow}
-        doDelete={doDelete}
+        doAction={doDelete}
         id={currentId}
         modalTitle={modalTitle}
         modalBody={modalBody}
@@ -67,8 +70,4 @@ const UserList = ({ users, fetchUsers }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return { users: state.userList };
-};
-
-export default connect(mapStateToProps, { fetchUsers })(UserList);
+export default Users;

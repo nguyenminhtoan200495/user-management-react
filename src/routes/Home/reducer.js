@@ -1,4 +1,4 @@
-import { FETCH_USERS } from '../actions/types';
+import { FETCH_USERS } from './types';
 
 const INITIAL_STATE = {
   userList: []

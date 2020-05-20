@@ -17,8 +17,8 @@ const UserForm = (props) => {
     });
   }, [props.initialValues]);
 
-  const onSubmitForm = () => {
-    props.onSubmit1(userValue);
+  const onSubmitForm = (user) => {
+    props.onSubmit1(user);
   };
 
   return (

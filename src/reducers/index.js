@@ -1,12 +1,8 @@
 import { combineReducers } from 'redux';
-import userListReducer from './userListReducer';
-import userCreateReducer from './userCreateReducer';
-import userEditReducer from './userEditReducer';
-import userReducer from './userReducer';
+import userListReducer from '../routes/Home/reducer';
+import userReducer from '../routes/UserEdit/reducer';
 
 export default combineReducers({
   userList: userListReducer,
-  userCreate: userCreateReducer,
-  userEdit: userEditReducer,
   user: userReducer
 });
